@@ -14,7 +14,7 @@
     <div class="container">
         <!---------------------------------- Inputs -------------------------------->
         <div class="zona-input">
-            <div class="secc-amu">
+            <div class="secc-flex">
                 <div class="secc-area">
                     <p class="input-usuario">Area</p>
                     <select name="area" id="input-depto">
@@ -55,7 +55,7 @@
                 </div>
             </div>
             <div class="secc-lista">
-                <p class="input-usuario">Lista de vacantes</p>
+                <p class="input-usuario" id="titulo-lista">Lista de vacantes</p>
                 <textarea id="input-lista" placeholder="Escribe o pega aquí la lista de vacantes."
                     oninput="convertirTexto()"></textarea><br><br>
                 <button onclick="takeshot()" id="generar-flyer">
@@ -65,17 +65,14 @@
         </div>
         <!-------------------------------- AREA BOLETIN ---------------------------->
         <div class="area-boletin" id="screenshot">
-            <div class="secc-preheader">
-                <p class="titulo">Boletín de Referidos</p>
-                <div class="seccion-logo">
-                    <img src="./media/naps-logo.png" alt="logo-nc" class="logo">
-                </div>
-            </div>
             <div class="encabezado">
                 <div class="seccion-titulo">
-                    <p class="vacantesde">Vacantes de <br><span id="depto"></span></p>
+                    <p class="titulo">Vacantes <br> en el área de <br><span id="depto"></span></p>
                 </div>
                 <div class="seccion-infoadicional">
+                    <div class="seccion-logo">
+                        <img src="./media/logo-napscareers.png" alt="logo-nc" class="logo">
+                    </div>
                     <div class="seccion-mes">
                         <p class="mes"><span id="mes"></span></p>
                     </div>
@@ -87,16 +84,22 @@
             <div class="listado">
                 <ul id="lista"></ul>
             </div>
+            <p class="nota">*Inglés avanzado requerido.</p>
             <div class="footer">
-                <p class="text-footer"><span id="ast">*</span></strong>Inglés avanzado requerido.<br></p>
-                <p class="text-footer2">¿Dudas? Envía mensaje a <br>
-                    <span id="correo">resume@napsmexico.com</span>
-                </p>
-
+                <p class="text-footer">Para más información sobre cualquier vacante de <span id="depto-footer"></span>,
+                    comenta
+                    esta publicación o contáctanos:</p>
+                <p class="correo">resume@napsmexico.com</p>
             </div>
             <div class="fondo-2-footer"></div>
         </div>
         <div id="output"></div>
+        <div class="aviso">
+            <h2>Importante</h2>
+            <p>Las tipografías de este flyer deben ser Plus Jakarta Sans, ve la imagen de referencia. Si no se ve de esa
+                forma, activa o descativa WatchGuard para poder visualizarla de forma correcta.</p>
+            <img src="./media/imagen-referencia.png" alt="flyer de referencia" id="img-ref">
+        </div>
     </div>
     <script src="./scripts.js"></script>
     <script src="./html2canvas.js"></script>
