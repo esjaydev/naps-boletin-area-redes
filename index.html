@@ -6,15 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Boletín de Vacantes</title>
     <link rel="stylesheet" href="./styles.css">
-    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.5/dist/html2canvas.min.js">
-    </script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.5/dist/html2canvas.min.js">
+    </script> -->
 </head>
 
 <body>
     <div class="container">
         <!---------------------------------- Inputs -------------------------------->
         <div class="zona-input">
-            <div class="secc-flex">
+            <div class="secc-amu">
                 <div class="secc-area">
                     <p class="input-usuario">Area</p>
                     <select name="area" id="input-depto">
@@ -23,9 +23,11 @@
                         <option value="Recursos Humanos">Recursos Humanos</option>
                         <option value="Calidad">Calidad</option>
                         <option value="Ingenieria">Ingeniería</option>
-                        <option value="Materiales">Materiales</option>
+                        <option value="Producción">Producción</option>
                         <option value="Aduanas">Aduanas</option>
+                        <option value="Materiales">Materiales</option>
                         <option value="Sistemas">Sistemas / IT</option>
+                        <option value="Administrativos">Administrativos</option>
                         <option value="Mantenimiento">Mantenimiento</option>
                         <option value="Ventas">Ventas</option>
                         <option value="EHS">EHS / Seguridad e Higiene</option>
@@ -53,56 +55,61 @@
                     <p class="input-usuario">Ubicación</p>
                     <input type="text" name="input-ubicacion" id="input-ubicacion">
                 </div>
+                <div class="descargar-ext">
+                    <p class="dom-capt"><a
+                            href="https://chrome.google.com/webstore/detail/dom-capture/ifldimnhajpgognpcoomiokinilgjgbl/related"
+                            target="_blank">⚠️Descarga
+                            la extensión DOM Capture</a></p>
+                    <button onclick="copiarString()" id="generar-flyer">
+                        Copiar String para DOM Capture
+                    </button>
+                </div>
             </div>
             <div class="secc-lista">
-                <p class="input-usuario" id="titulo-lista">Lista de vacantes</p>
+                <p class="input-usuario">Lista de vacantes</p>
                 <textarea id="input-lista" placeholder="Escribe o pega aquí la lista de vacantes."
                     oninput="convertirTexto()"></textarea><br><br>
-                <button onclick="takeshot()" id="generar-flyer">
-                    Generar Flyer
-                </button>
+
             </div>
         </div>
         <!-------------------------------- AREA BOLETIN ---------------------------->
         <div class="area-boletin" id="screenshot">
+            <div class="seccion-logo">
+                <img src="./media/naps-logo.png" alt="logo-nc" class="logo">
+            </div>
             <div class="encabezado">
                 <div class="seccion-titulo">
-                    <p class="titulo">Vacantes <br> en el área de <br><span id="depto"></span></p>
+                    <p class="vacantesde">Vacantes en el área de <br>
+                        <span id="depto"></span>
+                    </p>
                 </div>
                 <div class="seccion-infoadicional">
-                    <div class="seccion-logo">
-                        <img src="./media/logo-napscareers.png" alt="logo-nc" class="logo">
-                    </div>
-                    <div class="seccion-mes">
-                        <p class="mes"><span id="mes"></span></p>
-                    </div>
                     <div class="seccion-ubicacion">
                         <p class="ubicacion">📍<span id="ubicacion"></span></p>
+                    </div>
+                    <div class="seccion-mes">
+                        <p class="mes">📆<span id="mes"></span></p>
                     </div>
                 </div>
             </div>
             <div class="listado">
                 <ul id="lista"></ul>
             </div>
-            <p class="nota">*Inglés avanzado requerido.</p>
+            <p class="nota"><span id="ast">*</span></strong>Inglés avanzado requerido.</p>
             <div class="footer">
-                <p class="text-footer">Para más información sobre cualquier vacante de <span id="depto-footer"></span>,
-                    comenta
-                    esta publicación o contáctanos:</p>
-                <p class="correo">resume@napsmexico.com</p>
+                <p class="text-footer">Para mayor información sobre cualquier vacante, contáctanos al <strong>664 969
+                        4600</strong>.</p>
+                <p class="text-footer2">Conoce todas nuestras vacantes, entrando a <br>
+                    <span id="correo">mi.empleonaps.com</span>
+                </p>
+
             </div>
             <div class="fondo-2-footer"></div>
         </div>
         <div id="output"></div>
-        <div class="aviso">
-            <h2>Importante</h2>
-            <p>Las tipografías de este flyer deben ser Plus Jakarta Sans, ve la imagen de referencia. Si no se ve de esa
-                forma, activa o descativa WatchGuard para poder visualizarla de forma correcta.</p>
-            <img src="./media/imagen-referencia.png" alt="flyer de referencia" id="img-ref">
-        </div>
     </div>
     <script src="./scripts.js"></script>
-    <script src="./html2canvas.js"></script>
+    <!-- <script src="./html2canvas.js"></script> -->
 </body>
 
 </html>
